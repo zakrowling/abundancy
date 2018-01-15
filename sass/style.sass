@@ -1,0 +1,308 @@
+$charcoal: #222
+$gold: #d8a72e
+$body-font: "Lora", Georgia, Serif
+$heading-font: "Poppins", "Gotham", "Helvetica", Arial, Sans-serif
+
+*
+  box-sizing: border-box
+
+body
+  padding: 0
+  margin: 0
+  font: 20px $body-font
+  font-weight: 300
+  color: $charcoal
+  transition: all 0.3s ease
+  background: #fff
+  overflow-x: hidden
+  cursor: auto
+  .hero
+    position: relative
+    top: 0
+    z-index: 100
+    width: 100vw
+    height: 1080px
+    background-image: linear-gradient(0deg, transparent 24%, rgba(100, 100, 100, .05) 25%, rgba(100, 100, 100, .05) 26%, transparent 27%, transparent 74%, rgba(100, 100, 100, .05) 75%, rgba(100, 100, 100, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(100, 100, 100, .05) 25%, rgba(100, 100, 100, .05) 26%, transparent 27%, transparent 74%, rgba(100, 100, 100, .05) 75%, rgba(100, 100, 100, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px
+    border-bottom: 1px rgba(100, 100, 100, .05) solid
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    .logo
+      position: absolute
+      top: 38px
+      left: 38px
+      svg
+        animation: fade-in 0.5s ease 1
+        .slash
+          fill: $gold
+    #clear
+      position: absolute
+      top: 42px
+      right: 46px
+      z-index: 11
+      cursor: pointer
+      font: 0.7em $heading-font
+      font-weight: 600
+      text-transform: uppercase
+      letter-spacing: 1px
+      color: rgba($charcoal, 0.6)
+      &:hover
+        color: rgba($charcoal, 0.9)
+    #draw
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      margin: 0 auto
+      z-index: 10
+      width: 1920px
+      height: 1080px
+      cursor: url('../img/pngs/pen.png'), auto
+    .container
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+
+  .container
+    margin: 0 auto
+    padding: 12vh 2% 16vh
+    max-width: 1440px
+    text-align: center
+    h1
+      clear: both
+      padding: 0
+      margin: 0
+      font: 3.3em $heading-font
+      line-height: 0.9em
+      font-weight: 700
+      animation: fade-in-up 1.5s ease 1
+      strong
+        background: $gold -webkit-gradient(linear, 100% 0, 0 0, from($gold), color-stop(0.5, lighten($gold,30%)), to($gold))
+        background-position: -20rem top
+        background-repeat: no-repeat
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        text-fill-color: transparent
+        animation: shimmer 10s ease infinite
+    h2
+      padding: 0.5em 0 2em
+      font-size: 1.4em
+      line-height: 2em
+      font-weight: 300
+      animation: fade-in-up 1.8s ease 1
+    h3
+      font: 1em $heading-font
+      font-weight: 700
+      text-transform: uppercase
+      letter-spacing: 3px
+    a
+      position: relative
+      z-index: 10001
+      color: $charcoal
+      text-decoration: none
+      padding-bottom: 3px
+      border-bottom: 2px rgba($gold, 0.8) solid
+      transition: all 0.3s ease
+      &:hover
+        color: $gold
+        border-bottom-color: $gold
+    p
+      line-height: 2em
+      small
+        line-height: 1em
+    .mouse-container
+      position: relative
+      display: block
+      height: 100px
+      bottom: 0
+      text-transform: uppercase
+      font: 0.7em $heading-font
+      letter-spacing: 1px
+      font-weight: 600
+      color: rgba($charcoal, 0.6)
+      animation: fade-in-up 3s ease 1
+      .mouse
+        position: relative
+        margin: 10px auto
+        display :block
+        width: 30px
+        height: 50px
+        border: 2px $charcoal solid
+        border-radius: 20px
+        opacity: 0.4
+        .scroll-down
+          display: block
+          width: 5px
+          height: 5px
+          background: $charcoal
+          border-radius: 50%
+          margin: 15% auto auto auto
+          animation: scroller 1.5s ease infinite
+  .about-popup
+    position: fixed
+    bottom: 18px
+    right: 25px
+    z-index: 10000
+    width: 30%
+    visibility: hidden
+    opacity: 0
+    &.is-visible
+      visibility: visible
+      opacity: 1
+      animation: fade-in-up 1.5s ease 1
+    .message
+      position: relative
+      float: right
+      clear: both
+      padding: 14px 20px
+      margin: 10px 0
+      max-width: 80%
+      font-size: 0.9em
+      line-height: 1.7em
+      color: #312f2d
+      background: #efefef
+      border-radius: 2px
+      box-shadow: 0px 1px 2px rgba(0,0,0,0.2)
+      &:before
+        display: block
+        position: absolute
+        top: -24px
+        left: -80px
+        -moz-transform: scale(0.4)
+        -webkit-transform: scale(0.4)
+        transform: scale(0.4)
+        -webkit-transition: all 0.5s ease
+        -moz-transition: all 0.5s ease
+        transition: all 0.5s ease
+        content: url('http://www.zakrowling.com/wp-content/themes/zakrowling/images/avatar.png')
+      a 
+        color: $charcoal
+        text-decoration: none
+        padding-bottom: 3px
+        border-bottom: 2px rgba($gold, 0.8) solid
+        transition: all 0.3s ease
+        &:hover
+          color: $gold
+          border-bottom-color: $gold
+  .specialties
+    position: relative
+    z-index: 100
+    width: 100%
+    padding: 0 10%
+    margin: 0 auto
+    background: #fff
+    .specialty
+      display: inline-block
+      width: 45%
+      padding: 0 3% 5%
+      .numeral
+        font-size: 3.5em
+      &.product
+        animation: fade-in-up 2s ease 1
+      &.optimisation
+        animation: fade-in-up 2.5s ease 1
+      &.prototype
+        animation: fade-in-up 3s ease 1
+      &.web
+        animation: fade-in-up 3.5s ease 1
+  .contact,
+  .footer
+    clear: both
+    animation: fade-in-up 3.5s ease 1
+  .contact
+    padding-top: 35px
+  .footer
+    padding: 40px 0 20px
+    font-size: 0.7em
+  .clients
+    animation: fade-in-up 3.5s ease 1
+    clear: both
+    padding-top: 30px
+    background: $charcoal
+    color: #fff
+    h2
+      padding: 0
+      margin-bottom: 0
+    p 
+      padding: 0 0 1em 0
+    .item
+      padding: 20px 30px
+      filter: grayscale(100%)
+
+
+
+::selection
+    background: $gold
+    color: #fff
+
+::-moz-selection
+    background: $gold
+    color: #fff
+
+@keyframes fade-in-up
+  0%, 50%
+    opacity: 0
+    transform: translateY(1.5rem)
+  100%
+    opacity: 1
+    transform: translateY(0rem)
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes scroller
+  0%
+    margin-top: 20%
+    opacity: 1
+  90%
+    margin-top: 60%
+    opacity: 0
+  100%
+    margin-top: 20%
+    opacity: 0
+  
+@keyframes shimmer
+  0%
+    background-position: -20rem top
+  70%
+    background-position: 12.5rem top
+  100%
+    background-position: 12.5rem top
+
+      
+@media screen and (max-width: 800px)
+  body
+    .hero
+      height: 100vh
+      #clear,
+      .mouse-container,
+      canvas
+        display: none
+      .logo
+        text-align: center
+        width: 100%
+        left: auto
+    .container
+      padding-top: 8vh
+      padding-bottom: 8vh
+      max-width: 96%
+      h2
+        padding-bottom: 0
+    .specialties
+      padding: 0
+      .specialty
+        padding: 1em 0
+        float: none
+        width: 100% !important
+      .mouse-container
+        display: none
+    .clients
+      padding-top: 0
+    .about-popup
+      width: 100%
